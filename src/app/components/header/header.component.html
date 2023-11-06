@@ -1,0 +1,28 @@
+<div class="header-container" style="position: relative;" [ngStyle]="{position:'fixed',
+top:0,
+right:0}" >
+    <button mat-icon-button [matMenuTriggerFor]="hambugerMenu" class="hambuger-button">
+      <mat-icon>density_medium</mat-icon>
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="user-button">
+      <mat-icon>account_circle</mat-icon>
+      <span>{{currentUser.FirstName}} {{currentUser.LastName}}</span>
+    </button>
+    <mat-menu #menu="matMenu" class="users-menu" yPosition="above">
+      <button mat-menu-item (click)="navigateTo('/profile')">
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+    <mat-menu #hambugerMenu="matMenu" class="hambuger-menu" yPosition="above">
+      <button mat-menu-item [class.active]="i === selectedIndex"
+      (click)="navigateTo(item.route, i)" *ngFor="let item of menuItems; let i = index">
+        <mat-icon>{{item.icon}}</mat-icon>
+        <span>{{item.name}}</span>
+      </button>
+    </mat-menu>
+  </div>

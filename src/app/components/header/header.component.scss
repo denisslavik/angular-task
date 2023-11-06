@@ -1,0 +1,71 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 24px 8px 0;
+    background-color: var(--link-color);
+    box-shadow: 0 12px 10px -4px rgba(50, 49, 49, 0.2), 0 2px 2px #a1979724, 0 1px 5px #f2f0f01f;
+}
+
+::ng-deep.cdk-overlay-pane {
+    display: flex;
+    justify-content: end;
+}
+
+
+::ng-deep.cdk-overlay-pane .users-menu{
+    position: fixed;
+    top: 50px;
+    right: 0;
+    justify-content: end;
+    padding: 8px;
+    margin-right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+::ng-deep.cdk-overlay-pane .hambuger-menu{
+    position: fixed;
+    display: none;
+    top: 50px;
+    left: 20px;
+    justify-content: end;
+    padding: 14px;
+    margin-right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.user-button {
+    width: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 6px;
+    color: white;
+}
+
+.hambuger-button {
+    color: white;
+    margin-left: 30px;
+    visibility: hidden
+}
+
+.user-button span {
+    font-size: var(--base-font-size);
+}
+
+@media only screen and (max-width: 714px) {
+    .hambuger-button {
+        color: white;
+        margin-left: 30px;
+        visibility: visible;
+    }
+    ::ng-deep.cdk-overlay-pane .hambuger-menu {
+        display: block;
+    }
+}
+
+.active {
+    color: var(--link-color);
+}

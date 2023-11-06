@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div class="container">
+    <app-sidenav></app-sidenav>
+    <div class="main">
+        <div class="profile-header">
+          <p>Profile</p>
+          <button mat-fab extended (click)="saveProfile()" [disabled]="!isFormChanged()">
+            <mat-icon>save</mat-icon>
+            Save Profile
+          </button>
+        </div>
+        <form class="profile-form grid-form" [formGroup]="profileForm">
+            <mat-form-field class="profile-form-field" [class.invalid-input]="isFieldInvalid('FirstName')">
+                <div class="input-icon-wrapper">
+                    <mat-icon>person</mat-icon>
+                    <input matInput placeholder="First Name" required name="FirstName" maxlength="255" formControlName="FirstName" />
+                  </div>
+                  <mat-error *ngIf="profileForm.get('FirstName')?.invalid && profileForm.get('FirstName')?.touched">First Name is required
+                  </mat-error>
+              </mat-form-field>
+              <mat-form-field class="profile-form-field" [class.invalid-input]="isFieldInvalid('LastName')">
+                <div class="input-icon-wrapper">
+                    <mat-icon>person</mat-icon>
+                    <input matInput placeholder="Last Name" required name="LastName" maxlength="255" formControlName="LastName" />
+                </div>
+                <mat-error *ngIf="profileForm.get('LastName')?.invalid && profileForm.get('LastName')?.touched">LastName is required
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="profile-form-field" [class.invalid-input]="isFieldInvalid('PhoneNumber')">
+                <div class="input-icon-wrapper">
+                  <mat-icon>phone</mat-icon>
+                  <input matInput placeholder="Phone Number" required name="phonenumber" mask="(000) 000-0000" prefix="+7" formControlName="PhoneNumber" />
+                </div>
+                <mat-error *ngIf="profileForm.get('PhoneNumber')?.invalid && profileForm.get('PhoneNumber')?.touched">Phone Number is invalid
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="profile-form-field">
+                <div class="input-icon-wrapper">
+                    <mat-icon>email</mat-icon>
+                    <input matInput type="email" placeholder="Email" required name="email" readonly formControlName="Email" />
+                </div>
+              </mat-form-field>
+              <mat-form-field class="profile-form-field" [class.invalid-input]="isFieldInvalid('Website')">
+                <div class="input-icon-wrapper">
+                    <mat-icon>language</mat-icon>
+                    <input matInput type="url" placeholder="Website" name="website" formControlName="Website"/>
+                </div>
+                <mat-error *ngIf="profileForm.get('Website')?.invalid && profileForm.get('Website')?.touched">
+                  Website URL is invalid
+                </mat-error>
+              </mat-form-field>
+          </form>
+    </div>
+
+</div>

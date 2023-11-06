@@ -1,0 +1,136 @@
+.container {
+    display: flex;
+    margin-top: 50px;
+}
+
+.main {
+    padding: 28px;
+    font-size: 24px;
+    width: 100%;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15%;
+}
+
+.profile-header button {
+    font-size: var(--base-font-size);
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 36px;
+    margin: 0 auto;
+    padding: 56px 18px;
+    width: 70%;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.profile-form-field {
+    display: flex;
+    margin: 0 10px;
+}
+
+.input-icon-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--base-font-size);
+}
+
+::ng-deep .invalid-input {
+    color: red;
+}
+
+mat-error {
+    color: red;
+    font-size: var(--base-font-size);
+}
+
+::ng-deep .custom-snackbar-panel {
+    position: fixed !important;
+    top: 30px !important;
+    right: 0 !important;
+    background-color: #4BB543;
+    border-radius: 10px !important;
+}
+
+::ng-deep .error-snackbar {
+    position: fixed !important;
+    top: 30px !important;
+    right: 0 !important;
+    color: white;
+    background-color: rgb(191, 52, 52);
+}
+
+::ng-deep .mdc-snackbar {
+    right: 0 !important;
+    left: unset !important;
+    bottom: unset !important;
+    border-radius: 4px !important;
+}
+
+::ng-deep button[mat-fab]:disabled {
+    background-color: rgb(168, 165, 165);
+    color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+    .grid-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 36px;
+        margin: 0 auto;
+        padding: 56px 18px;
+        width: 90%;
+        border: 1px solid var(--primary-color);
+        border-radius: 8px;
+    }
+    .profile-header {
+        padding-right: 5%;
+    }
+}
+
+@media only screen and (max-width: 714px) {
+    .grid-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 36px;
+        margin: 0 auto;
+        padding: 56px 18px;
+        width: 100%;
+        border: 1px solid var(--primary-color);
+        border-radius: 8px;
+    }
+    .profile-header {
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .profile-form-field {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .grid-form {
+        padding: 48px 0px;
+        gap: 28px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .profile-form-field {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .grid-form {
+        padding: 56px 0px;
+        width: 100%;
+        min-width: 320px;
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "FirstName": "Samuel",
+      "LastName": "James",
+      "PhoneNumber": "1231231235",
+      "Email": "samuel123@mail.com",
+      "Website": "hello",
+      "Password": "hello",
+      "id": 1
+    },
+    {
+      "FirstName": "Andre",
+      "LastName": "Silva",
+      "PhoneNumber": "1231234544",
+      "Email": "andre123@mail.com",
+      "Website": "hello.com",
+      "Password": "helloworld",
+      "id": 2
+    }
+  ]
+}

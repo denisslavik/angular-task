@@ -1,0 +1,41 @@
+.sidenav-container {
+    padding: 28px;
+    gap: 0px;
+    width: 280px;
+    height: 600px;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.list-item:hover {
+    background-color: #f0f0f0;
+}
+
+.icon-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.list-item .icon {
+    font-size: 22px;
+}
+
+.active {
+    
+    color: var(--link-color);
+}
+
+@media only screen and (max-width: 714px) {
+    .sidenav-container {
+        display: none;
+        padding: 28px;
+    }
+}
